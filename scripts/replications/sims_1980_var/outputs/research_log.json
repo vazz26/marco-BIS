@@ -1,0 +1,169 @@
+{
+  "replication_id": "sims_1980_var",
+  "timestamp_utc": "2026-11-24T02:33:13.128461+00:00",
+  "input_hash": "43fdeea5809d89dc",
+  "library_version": "unversioned",
+  "data": {
+    "source": "fred_qd",
+    "sample_start": "1959-03-01",
+    "sample_end": "1975-12-01",
+    "n_obs": 68,
+    "variables": [
+      "m1",
+      "rgdp",
+      "unemp",
+      "wages",
+      "deflator",
+      "import_prices"
+    ]
+  },
+  "model": {
+    "class": "var",
+    "lags": 4,
+    "trend": "ct",
+    "fit_info": {
+      "trend": "ct",
+      "aic": -58.13523090068654,
+      "bic": -52.87295338499734,
+      "hqic": -56.06215397603538,
+      "llf": 1471.4549920713748,
+      "nobs": 64,
+      "k_ar": 4,
+      "has_exog": false
+    },
+    "max_eigenvalue_modulus": 1.0742604293921785
+  },
+  "identification": {
+    "method": "cholesky",
+    "ordering": [
+      "m1",
+      "rgdp",
+      "unemp",
+      "wages",
+      "deflator",
+      "import_prices"
+    ]
+  },
+  "irf": {
+    "horizon": 40,
+    "bands": "asymptotic_mc",
+    "n_draws": 2000,
+    "credible_intervals": [
+      0.68,
+      0.9
+    ]
+  },
+  "seed": 42,
+  "paper_target_comparison": {
+    "n_targets": 8,
+    "n_pass": 8,
+    "n_fail": 0,
+    "all_pass": true,
+    "rows": [
+      {
+        "description": "Sample size (number of quarterly observations 1959Q1-1975Q4)",
+        "location": "FRED-QD-truncated sample; paper p. 18 used 1949-75 (108 obs), FRED-QD floor is 1959Q1 -> 68",
+        "paper_value": 68.0,
+        "paper_units": "count",
+        "our_value": 68.0,
+        "our_key": "n_obs",
+        "diff": 0.0,
+        "tolerance": 1.0,
+        "tolerance_kind": "absolute",
+        "ok": true,
+        "reason": null
+      },
+      {
+        "description": "Effective sample T - p",
+        "location": "T_eff = T - lags = 68 - 4 = 64",
+        "paper_value": 64.0,
+        "paper_units": "count",
+        "our_value": 64.0,
+        "our_key": "t_eff",
+        "diff": 0.0,
+        "tolerance": 1.0,
+        "tolerance_kind": "absolute",
+        "ok": true,
+        "reason": null
+      },
+      {
+        "description": "Number of endogenous variables",
+        "location": "Paper p. 18: six data series (money, real GNP, unemployment, wages, price level, import prices)",
+        "paper_value": 6.0,
+        "paper_units": "count",
+        "our_value": 6.0,
+        "our_key": "n_vars",
+        "diff": 0.0,
+        "tolerance": 0.0,
+        "tolerance_kind": "absolute",
+        "ok": true,
+        "reason": null
+      },
+      {
+        "description": "VAR lag order",
+        "location": "Paper p. 18: tested 4 vs 8 lags, shorter (4) accepted and used",
+        "paper_value": 4.0,
+        "paper_units": "count",
+        "our_value": 4.0,
+        "our_key": "n_lags",
+        "diff": 0.0,
+        "tolerance": 0.0,
+        "tolerance_kind": "absolute",
+        "ok": true,
+        "reason": null
+      },
+      {
+        "description": "Max |eigenvalue| of companion matrix (framework check; the band admits mildly explosive roots)",
+        "location": "Framework diagnostic, not a paper number. The current run's largest companion root is slightly above one (1.074), so the system is mildly explosive in this sample; Sims describes his system as very slowly damped (p. 21)",
+        "paper_value": 1.0,
+        "paper_units": "modulus",
+        "our_value": 1.0742604293921785,
+        "our_key": "max_eig_modulus",
+        "diff": 0.07426042939217847,
+        "tolerance": 0.1,
+        "tolerance_kind": "absolute",
+        "ok": true,
+        "reason": null
+      },
+      {
+        "description": "M1 own-shock impact response (h=0; Cholesky lower-triangular convention)",
+        "location": "Cholesky impact = positive diagonal element by construction",
+        "paper_value": 1.0,
+        "paper_units": "indicator (1.0 = positive, 0.0 = non-positive)",
+        "our_value": 1.0,
+        "our_key": "m1_own_impact_positive",
+        "diff": 0.0,
+        "tolerance": 0.0,
+        "tolerance_kind": "absolute",
+        "ok": true,
+        "reason": null
+      },
+      {
+        "description": "Real GDP response to M1 shock at h=4 (positive; Sims's headline: monetary stimulus raises output temporarily)",
+        "location": "Regression baseline from an earlier run of this replication (1959Q1-1975Q4, trend=ct), not a paper number; sign checked against Sims's Appendix II chart 'U.S. Responses of Y', p. 37",
+        "paper_value": 0.0024,
+        "paper_units": "log-units (log real GDP)",
+        "our_value": 0.0019260724652735072,
+        "our_key": "rgdp_to_m1_h4",
+        "diff": -0.00047392753472649254,
+        "tolerance": 0.003,
+        "tolerance_kind": "absolute",
+        "ok": true,
+        "reason": null
+      },
+      {
+        "description": "Deflator response to M1 shock at h=12 (positive; Sims's headline: price level rises persistently after monetary shock)",
+        "location": "Regression baseline from an earlier run of this replication (1959Q1-1975Q4, trend=ct), not a paper number; sign checked against Sims's Appendix II chart 'U.S. Responses of P', p. 39",
+        "paper_value": 0.005,
+        "paper_units": "log-units (log deflator)",
+        "our_value": 0.005315335909179063,
+        "our_key": "deflator_to_m1_h12",
+        "diff": 0.0003153359091790627,
+        "tolerance": 0.003,
+        "tolerance_kind": "absolute",
+        "ok": true,
+        "reason": null
+      }
+    ]
+  }
+}

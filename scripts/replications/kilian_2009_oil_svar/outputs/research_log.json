@@ -1,0 +1,117 @@
+{
+  "replication_id": "kilian_2009_oil_svar",
+  "timestamp_utc": "2026-11-24T02:46:34.065114+00:00",
+  "data": {
+    "source": "https://raw.githubusercontent.com/richryan/jcre-oil/main/kilianAER2009replication/data.txt",
+    "n_obs": 419,
+    "sample_start": "1973-02-01",
+    "sample_end": "2007-12-01",
+    "variables": [
+      "dprod",
+      "rea",
+      "rpo"
+    ]
+  },
+  "model": {
+    "class": "var",
+    "lags": 24,
+    "max_eigenvalue_modulus": 0.9885919975246638,
+    "fit_info": {
+      "trend": "c",
+      "aic": 12.722382343164435,
+      "bic": 14.928397488767843,
+      "hqic": 13.596424343073082,
+      "llf": -3975.112674622513,
+      "nobs": 395,
+      "k_ar": 24,
+      "has_exog": false
+    }
+  },
+  "identification": {
+    "method": "cholesky",
+    "ordering": [
+      "dprod",
+      "rea",
+      "rpo"
+    ],
+    "shock_names": [
+      "oil_supply",
+      "agg_demand",
+      "oil_specific"
+    ]
+  },
+  "seed": 42,
+  "paper_target_comparison": {
+    "n_targets": 5,
+    "n_pass": 5,
+    "n_fail": 0,
+    "all_pass": true,
+    "rows": [
+      {
+        "description": "Oil-specific (precautionary) demand shock -> real oil price, IMPACT response",
+        "location": "Kilian (2009) Fig. 3, p. 1061, bottom-right cell (values from the author's replication files)",
+        "paper_value": 5.94,
+        "paper_units": "percent",
+        "our_value": 5.940117580780597,
+        "our_key": "oil_specific_rpo_impact",
+        "diff": 0.00011758078059642685,
+        "tolerance": 0.5,
+        "tolerance_kind": "absolute",
+        "ok": true,
+        "reason": null
+      },
+      {
+        "description": "Oil-specific demand shock -> real oil price, PEAK response (~2 months)",
+        "location": "Kilian (2009) Fig. 3, p. 1061, bottom-right cell (values from the author's replication files)",
+        "paper_value": 8.55,
+        "paper_units": "percent",
+        "our_value": 8.546688442000393,
+        "our_key": "oil_specific_rpo_peak",
+        "diff": -0.003311557999607473,
+        "tolerance": 0.6,
+        "tolerance_kind": "absolute",
+        "ok": true,
+        "reason": null
+      },
+      {
+        "description": "Number of endogenous variables (3-variable global oil-market VAR)",
+        "location": "Kilian (2009) Sec. II.A, eq. (1), p. 1058",
+        "paper_value": 3.0,
+        "paper_units": "count",
+        "our_value": 3.0,
+        "our_key": "n_vars",
+        "diff": 0.0,
+        "tolerance": 0.0,
+        "tolerance_kind": "absolute",
+        "ok": true,
+        "reason": null
+      },
+      {
+        "description": "VAR lag order (24 monthly lags)",
+        "location": "Kilian (2009) Sec. II.A, eq. (1), p. 1058",
+        "paper_value": 24.0,
+        "paper_units": "count",
+        "our_value": 24.0,
+        "our_key": "n_lags",
+        "diff": 0.0,
+        "tolerance": 0.0,
+        "tolerance_kind": "absolute",
+        "ok": true,
+        "reason": null
+      },
+      {
+        "description": "Max |eigenvalue| regression check (near unit root expected for a level oil-price system; the band admits mildly explosive roots, so this is not a stability test)",
+        "location": "Own eigenvalue diagnostic, not a paper value (the paper reports no eigenvalues)",
+        "paper_value": 0.99,
+        "paper_units": "modulus",
+        "our_value": 0.9885919975246638,
+        "our_key": "max_eig_modulus",
+        "diff": -0.0014080024753362341,
+        "tolerance": 0.05,
+        "tolerance_kind": "absolute",
+        "ok": true,
+        "reason": null
+      }
+    ]
+  }
+}

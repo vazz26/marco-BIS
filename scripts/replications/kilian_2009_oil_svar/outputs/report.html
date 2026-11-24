@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kilian (2009): Not All Oil Price Shocks Are Alike</title>
+<script src="https://cdn.plot.ly/plotly-2.35.0.min.js"></script>
+<style>
+:root {
+    --bg: #ffffff;
+    --fg: #1a1a2e;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --accent: #4a6fa5;
+    --green: #16a34a;
+    --amber: #d97706;
+    --red: #dc2626;
+    --section-bg: #f9fafb;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--fg);
+    background: var(--bg);
+    line-height: 1.6;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 2rem 4rem;
+}
+h1 { font-size: 1.8rem; margin-bottom: 0.25rem; }
+h2 {
+    font-size: 1.25rem;
+    margin: 2.5rem 0 1rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid var(--accent);
+}
+h3 { font-size: 1.05rem; margin: 1.5rem 0 0.5rem; color: var(--accent); }
+.subtitle { color: var(--muted); font-size: 1rem; margin-bottom: 0.25rem; }
+.timestamp { color: var(--muted); font-size: 0.85rem; margin-bottom: 2rem; }
+.narrative { margin: 1rem 0; line-height: 1.7; }
+.narrative p { margin-bottom: 0.8rem; }
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+}
+th, td { padding: 0.5rem 0.75rem; text-align: left; border-bottom: 1px solid var(--border); }
+th { font-weight: 600; background: var(--section-bg); }
+tr:hover { background: #f3f4f6; }
+.num { text-align: right; font-variant-numeric: tabular-nums; }
+.pass { color: var(--green); font-weight: 600; }
+.warn { color: var(--amber); font-weight: 600; }
+.fail { color: var(--red); font-weight: 600; }
+
+/* Spec table */
+.spec-table { max-width: 600px; }
+.spec-table td:first-child { font-weight: 600; width: 40%; color: var(--muted); }
+
+/* Tabs */
+.tab-container { margin: 1rem 0; }
+.tab-buttons { display: flex; gap: 0; border-bottom: 2px solid var(--border); margin-bottom: 1rem; }
+.tab-btn {
+    padding: 0.5rem 1.2rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.9rem;
+    color: var(--muted);
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    transition: all 0.15s;
+}
+.tab-btn:hover { color: var(--fg); }
+.tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); font-weight: 600; }
+.tab-panel { display: none !important; }
+.tab-panel.active { display: block !important; }
+
+/* Collapsible */
+details { margin: 1rem 0; }
+summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--accent);
+    padding: 0.5rem 0;
+}
+details pre {
+    background: var(--section-bg);
+    padding: 1rem;
+    border-radius: 4px;
+    overflow-x: auto;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+/* Print */
+@media print {
+    body { max-width: none; padding: 1rem; }
+    .tab-btn { display: none; }
+    .tab-panel { display: block !important; page-break-inside: avoid; }
+    details { open; }
+}
+</style>
+</head>
+<body>
+<h1>Kilian (2009): Not All Oil Price Shocks Are Alike</h1>
+<div class="subtitle">Recursive global oil-market SVAR: oil supply, aggregate demand, and oil-specific demand shocks</div>
+<div class="timestamp">Generated: 2026-11-24 02:46</div>
+<h2>Specification</h2>
+<table class="spec-table"><tr><td>Model</td><td>VAR(24) + recursive (Cholesky) identification</td></tr><tr><td>Variables</td><td>Oil production growth, Real economic activity, Real price of oil</td></tr><tr><td>Identification</td><td>Recursive — Kilian (2009) ordering [oil production, real activity, real oil price]</td></tr><tr><td>Sample</td><td>1973-02 to 2007-12 (419 obs)</td></tr><tr><td>Lag order</td><td>24</td></tr><tr><td>Max |eigenvalue|</td><td>0.9886</td></tr></table>
+<h2>Impulse Response Functions</h2>
+<div class="tab-container" data-group="irf-1"><div class="tab-buttons"><button class="tab-btn  active" onclick="switchTab('irf-1', 0)">oil_supply</button><button class="tab-btn" onclick="switchTab('irf-1', 1)">agg_demand</button><button class="tab-btn" onclick="switchTab('irf-1', 2)">oil_specific</button></div><div class="tab-panel  active"><div style="height:390px; width:100%;">                            <div id="f7e05a71-29a4-45ab-9fd6-5be28101ea0b" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("f7e05a71-29a4-45ab-9fd6-5be28101ea0b")) {                    Plotly.newPlot(                        "f7e05a71-29a4-45ab-9fd6-5be28101ea0b",                        [{"legendgroup":"point","line":{"color":"#1a1a2e","width":2},"name":"Point estimate","showlegend":true,"x":{"dtype":"i1","bdata":"AAECAwQFBgcICQoLDA0ODw=="},"y":{"dtype":"f8","bdata":"ZCKMz229MkCSIYN+5kb\u002fvzZi54kbAADA3VDO4Y8PDsDEBN4Lxzzpv2PBW0JE9APAzlcVEtzG5j9xUlNhJ7Pbv5nc4ai7z\u002fA\u002frbcHvLSNBUCL7HAxQ67jPwQxAskNQ\u002f+\u002fIQw0jP4gCEAqp1l6J4Dxv1Kl2qhGIvy\u002f6TpHnbZ0AkA="},"type":"scatter","xaxis":"x","yaxis":"y"},{"legendgroup":"point","line":{"color":"#1a1a2e","width":2},"name":"Point estimate","showlegend":false,"x":{"dtype":"i1","bdata":"AAECAwQFBgcICQoLDA0ODw=="},"y":{"dtype":"f8","bdata":"eBa85YvSsj9eLW0CHce2P\u002ff6PRz7Bdo\u002flt2iSAfP7T+0DkuGbn\u002foP957jnZXnMo\u002f3L79Biwiu7\u002fyZHELXsWxvw9i+DtyrdY\u002fPYIm+EiN4T+8YFkXQlvdP7IA8pPcCeU\u002fMH5Nqemc7T8sOSOWOCHhP0LfW5OLLd8\u002fpcnfFawu7T8="},"type":"scatter","xaxis":"x2","yaxis":"y2"},{"legendgroup":"point","line":{"color":"#1a1a2e","width":2},"name":"Point estimate","showlegend":false,"x":{"dtype":"i1","bdata":"AAECAwQFBgcICQoLDA0ODw=="},"y":{"dtype":"f8","bdata":"UermXXs03L\u002fmpVKJlVvZvxouA4HD8+2\u002fxgSc6M5q7r9nO4pWF0rxv6AeanPWOfG\u002fvm\u002f81rbg7L9nE7f\u002f5Zziv2ksM5\u002fe8tC\u002fAJ3XwhHKfb\u002fa5i3C8+7KP9pokAplktI\u002fbnvywTA34z\u002fKHBuU6LTkP6ie6ZFOWeA\u002fkrDFnfhw1z8="},"type":"scatter","xaxis":"x3","yaxis":"y3"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05}}},"xaxis":{"anchor":"y","domain":[0.0,0.31578947368421056],"title":{"font":{"size":11},"text":"Months"},"tickfont":{"size":10},"gridcolor":"#eee"},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"font":{"size":11},"text":"Oil production growth"},"tickfont":{"size":10},"gridcolor":"#eee"},"xaxis2":{"anchor":"y2","domain":[0.3421052631578948,0.6578947368421053],"title":{"font":{"size":11},"text":"Months"},"tickfont":{"size":10},"gridcolor":"#eee"},"yaxis2":{"anchor":"x2","domain":[0.0,1.0],"tickfont":{"size":10},"gridcolor":"#eee"},"xaxis3":{"anchor":"y3","domain":[0.6842105263157896,1.0],"title":{"font":{"size":11},"text":"Months"},"tickfont":{"size":10},"gridcolor":"#eee"},"yaxis3":{"anchor":"x3","domain":[0.0,1.0],"tickfont":{"size":10},"gridcolor":"#eee"},"annotations":[{"font":{"family":"Georgia, serif","size":11},"showarrow":false,"text":"Oil production growth","x":0.15789473684210528,"xanchor":"center","xref":"paper","y":1.0,"yanchor":"bottom","yref":"paper"},{"font":{"family":"Georgia, serif","size":11},"showarrow":false,"text":"Real economic activity","x":0.5,"xanchor":"center","xref":"paper","y":1.0,"yanchor":"bottom","yref":"paper"},{"font":{"family":"Georgia, serif","size":11},"showarrow":false,"text":"Real price of oil","x":0.8421052631578949,"xanchor":"center","xref":"paper","y":1.0,"yanchor":"bottom","yref":"paper"}],"shapes":[{"line":{"color":"#999999","dash":"dash","width":0.8},"type":"line","x0":0,"x1":1,"xref":"x domain","y0":0,"y1":0,"yref":"y"},{"line":{"color":"#999999","dash":"dash","width":0.8},"type":"line","x0":0,"x1":1,"xref":"x2 domain","y0":0,"y1":0,"yref":"y2"},{"line":{"color":"#999999","dash":"dash","width":0.8},"type":"line","x0":0,"x1":1,"xref":"x3 domain","y0":0,"y1":0,"yref":"y3"}],"margin":{"t":60,"b":70,"l":80,"r":30},"font":{"family":"Georgia, serif","size":12},"legend":{"font":{"size":11},"orientation":"h","y":-0.08,"x":0.5,"xanchor":"center"},"height":390,"plot_bgcolor":"white"},                        {"responsive": true}                    )                };            </script>        </div></div><div class="tab-panel"><div style="height:390px; width:100%;">                            <div id="1b221518-77fc-426a-beaa-a9eb5bdf018d" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("1b221518-77fc-426a-beaa-a9eb5bdf018d")) {                    Plotly.newPlot(                        "1b221518-77fc-426a-beaa-a9eb5bdf018d",                        [{"legendgroup":"point","line":{"color":"#1a1a2e","width":2},"name":"Point estimate","showlegend":true,"x":{"dtype":"i1","bdata":"AAECAwQFBgcICQoLDA0ODw=="},"y":{"dtype":"f8","bdata":"AAAAAAAAAAB+GlsV4Pvpv1hwDPi9e\u002fA\u002fhyuOrXAX4r81uz4c\u002fXvFP9Y17YIyY7+\u002fuNRqRz2Rqb++9b80Ndb\u002fP\u002f6caM71A+o\u002fXW4U9UDh379Ez2Gh9yvdv+40ZTZ80NE\u002f0B5Ie9Y327+L4bROV4TwP\u002fDQjG5dBvu\u002fDKrzbsqB+78="},"type":"scatter","xaxis":"x","yaxis":"y"},{"legendgroup":"point","line":{"color":"#1a1a2e","width":2},"name":"Point estimate","showlegend":false,"x":{"dtype":"i1","bdata":"AAECAwQFBgcICQoLDA0ODw=="},"y":{"dtype":"f8","bdata":"xNeIJSk8EEBlOiC57LMTQLBscLlTXRRABmOar2LyE0CdHQbzWcoTQLekR4AkKhNAe8S647jZEkDjutfr2x0TQFll5lo9thJA05oEwdrMEUASniB30ecRQF2x6ivYEBNAODyrieYuFUAzKwlolfcVQK71I+J6wRVALkA3cauiEkA="},"type":"scatter","xaxis":"x2","yaxis":"y2"},{"legendgroup":"point","line":{"color":"#1a1a2e","width":2},"name":"Point estimate","showlegend":false,"x":{"dtype":"i1","bdata":"AAECAwQFBgcICQoLDA0ODw=="},"y":{"dtype":"f8","bdata":"TAx398Is3j+N8ut8VMfrPzxh0Ml6rvM\u002f0QZJPjmm8T+viz9BsxD1P9hj0BZVfvY\u002fUQ2WX\u002fG\u002f+D+QFTfunoMAQNRdcbKgqwZAOT1E4+V2DEBbdsvI3qYNQJbM0U\u002fTeQ5AAuTL2bVSEUAh4lMz7loRQEOilXpycBBAIkJ8EbMaD0A="},"type":"scatter","xaxis":"x3","yaxis":"y3"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05}}},"xaxis":{"anchor":"y","domain":[0.0,0.31578947368421056],"title":{"font":{"size":11},"text":"Months"},"tickfont":{"size":10},"gridcolor":"#eee"},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"font":{"size":11},"text":"Oil production growth"},"tickfont":{"size":10},"gridcolor":"#eee"},"xaxis2":{"anchor":"y2","domain":[0.3421052631578948,0.6578947368421053],"title":{"font":{"size":11},"text":"Months"},"tickfont":{"size":10},"gridcolor":"#eee"},"yaxis2":{"anchor":"x2","domain":[0.0,1.0],"tickfont":{"size":10},"gridcolor":"#eee"},"xaxis3":{"anchor":"y3","domain":[0.6842105263157896,1.0],"title":{"font":{"size":11},"text":"Months"},"tickfont":{"size":10},"gridcolor":"#eee"},"yaxis3":{"anchor":"x3","domain":[0.0,1.0],"tickfont":{"size":10},"gridcolor":"#eee"},"annotations":[{"font":{"family":"Georgia, serif","size":11},"showarrow":false,"text":"Oil production growth","x":0.15789473684210528,"xanchor":"center","xref":"paper","y":1.0,"yanchor":"bottom","yref":"paper"},{"font":{"family":"Georgia, serif","size":11},"showarrow":false,"text":"Real economic activity","x":0.5,"xanchor":"center","xref":"paper","y":1.0,"yanchor":"bottom","yref":"paper"},{"font":{"family":"Georgia, serif","size":11},"showarrow":false,"text":"Real price of oil","x":0.8421052631578949,"xanchor":"center","xref":"paper","y":1.0,"yanchor":"bottom","yref":"paper"}],"shapes":[{"line":{"color":"#999999","dash":"dash","width":0.8},"type":"line","x0":0,"x1":1,"xref":"x domain","y0":0,"y1":0,"yref":"y"},{"line":{"color":"#999999","dash":"dash","width":0.8},"type":"line","x0":0,"x1":1,"xref":"x2 domain","y0":0,"y1":0,"yref":"y2"},{"line":{"color":"#999999","dash":"dash","width":0.8},"type":"line","x0":0,"x1":1,"xref":"x3 domain","y0":0,"y1":0,"yref":"y3"}],"margin":{"t":60,"b":70,"l":80,"r":30},"font":{"family":"Georgia, serif","size":12},"legend":{"font":{"size":11},"orientation":"h","y":-0.08,"x":0.5,"xanchor":"center"},"height":390,"plot_bgcolor":"white"},                        {"responsive": true}                    )                };            </script>        </div></div><div class="tab-panel"><div style="height:390px; width:100%;">                            <div id="85f6793a-edde-4512-99e4-8ab2c3ae9863" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("85f6793a-edde-4512-99e4-8ab2c3ae9863")) {                    Plotly.newPlot(                        "85f6793a-edde-4512-99e4-8ab2c3ae9863",                        [{"legendgroup":"point","line":{"color":"#1a1a2e","width":2},"name":"Point estimate","showlegend":true,"x":{"dtype":"i1","bdata":"AAECAwQFBgcICQoLDA0ODw=="},"y":{"dtype":"f8","bdata":"AAAAAAAAAABWMKADhrgBwCKYBt9N+PU\u002fZZvO\u002fibv5j8bmeIh22LdP5sI1oqz9fO\u002fyMWIXStIAEDLBPJryWjoP6Sg8+jtKOK\u002fDfVRqqD08L+eBcqbbtjjP4K1c1ITWOG\u002fz7YzUZZq8j\u002fsXO6glaR2v7vlFU\u002f4DLS\u002fRjwyMRVb8b8="},"type":"scatter","xaxis":"x","yaxis":"y"},{"legendgroup":"point","line":{"color":"#1a1a2e","width":2},"name":"Point estimate","showlegend":false,"x":{"dtype":"i1","bdata":"AAECAwQFBgcICQoLDA0ODw=="},"y":{"dtype":"f8","bdata":"AAAAAAAAAABadUCGK9zlP3e\u002fXcmfwuk\u002fb5R8eESK7z9hg9SEx2z0P3B\u002fKLFsdPY\u002fn9Qpq+FA+D9ytYnbi938PyoVYYX4bgFAlXMN3rSdAkCHZat7ewr\u002fP3F0BRxzAPs\u002fIzYpUdrb+z9boBbKnyMAQHKiW9Y2w\u002fo\u002fEAMh6BGE8z8="},"type":"scatter","xaxis":"x2","yaxis":"y2"},{"legendgroup":"point","line":{"color":"#1a1a2e","width":2},"name":"Point estimate","showlegend":false,"x":{"dtype":"i1","bdata":"AAECAwQFBgcICQoLDA0ODw=="},"y":{"dtype":"f8","bdata":"o2PfLq7CF0BeOAtk\u002f+AgQFv8JoznFyFAWgv\u002fqAOwIEAWL9MJr3keQMuX73ZVjR1AaZNBh\u002fKZG0CXA2ktptUaQDQXJWmlOxpAg6L7C3svGEBBjz\u002fy5+wYQDxOiCBKyxpAvvFpDvIcG0D\u002f1sElHhQYQJ9egrW0dhVAl8WDTb\u002fHEkA="},"type":"scatter","xaxis":"x3","yaxis":"y3"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05}}},"xaxis":{"anchor":"y","domain":[0.0,0.31578947368421056],"title":{"font":{"size":11},"text":"Months"},"tickfont":{"size":10},"gridcolor":"#eee"},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"font":{"size":11},"text":"Oil production growth"},"tickfont":{"size":10},"gridcolor":"#eee"},"xaxis2":{"anchor":"y2","domain":[0.3421052631578948,0.6578947368421053],"title":{"font":{"size":11},"text":"Months"},"tickfont":{"size":10},"gridcolor":"#eee"},"yaxis2":{"anchor":"x2","domain":[0.0,1.0],"tickfont":{"size":10},"gridcolor":"#eee"},"xaxis3":{"anchor":"y3","domain":[0.6842105263157896,1.0],"title":{"font":{"size":11},"text":"Months"},"tickfont":{"size":10},"gridcolor":"#eee"},"yaxis3":{"anchor":"x3","domain":[0.0,1.0],"tickfont":{"size":10},"gridcolor":"#eee"},"annotations":[{"font":{"family":"Georgia, serif","size":11},"showarrow":false,"text":"Oil production growth","x":0.15789473684210528,"xanchor":"center","xref":"paper","y":1.0,"yanchor":"bottom","yref":"paper"},{"font":{"family":"Georgia, serif","size":11},"showarrow":false,"text":"Real economic activity","x":0.5,"xanchor":"center","xref":"paper","y":1.0,"yanchor":"bottom","yref":"paper"},{"font":{"family":"Georgia, serif","size":11},"showarrow":false,"text":"Real price of oil","x":0.8421052631578949,"xanchor":"center","xref":"paper","y":1.0,"yanchor":"bottom","yref":"paper"}],"shapes":[{"line":{"color":"#999999","dash":"dash","width":0.8},"type":"line","x0":0,"x1":1,"xref":"x domain","y0":0,"y1":0,"yref":"y"},{"line":{"color":"#999999","dash":"dash","width":0.8},"type":"line","x0":0,"x1":1,"xref":"x2 domain","y0":0,"y1":0,"yref":"y2"},{"line":{"color":"#999999","dash":"dash","width":0.8},"type":"line","x0":0,"x1":1,"xref":"x3 domain","y0":0,"y1":0,"yref":"y3"}],"margin":{"t":60,"b":70,"l":80,"r":30},"font":{"family":"Georgia, serif","size":12},"legend":{"font":{"size":11},"orientation":"h","y":-0.08,"x":0.5,"xanchor":"center"},"height":390,"plot_bgcolor":"white"},                        {"responsive": true}                    )                };            </script>        </div></div></div><p style="font-size:0.8rem;color:var(--muted);margin-top:0.5rem">Point estimates only; uncertainty intervals were not computed.</p>
+<h2>Diagnostics</h2>
+<table><tr><th>Test</th><th>Oil production growth</th><th>Real economic activity</th><th>Real price of oil</th></tr><tr><td>Ljung-Box(8)</td><td class="num pass">0.997</td><td class="num pass">0.989</td><td class="num pass">1.000</td></tr><tr><td>Jarque-Bera</td><td class="num fail">0.000</td><td class="num pass">0.102</td><td class="num fail">0.000</td></tr><tr><td>ARCH-LM</td><td class="num fail">0.001</td><td class="num pass">0.555</td><td class="num fail">0.008</td></tr><tr><td colspan="4" style="border:none;height:0.5rem"></td></tr><tr><td>Max eigenvalue</td><td colspan="3" class="num pass">0.9886 <span style="color:var(--muted);font-size:0.8rem">(marginal (near unit root))</span></td></tr></table><p style="font-size:0.8rem;color:var(--muted);margin-top:0.5rem"><span class="pass">Green</span> p &gt; 0.10 &nbsp; <span class="warn">Amber</span> 0.05 &lt; p &lt; 0.10 &nbsp; <span class="fail">Red</span> p &lt; 0.05</p>
+<h2>Forecast Error Variance Decomposition (%)</h2>
+<table><tr><th>Response</th><th>h</th><th>oil_supply</th><th>agg_demand</th><th>oil_specific</th></tr><tr><td><strong>Oil production growth</strong></td><td class='num'>1</td><td class="num" style="background:rgba(74,111,165,0.15)">100.0</td><td class="num" style="background:rgba(74,111,165,0.0)">0.0</td><td class="num" style="background:rgba(74,111,165,0.0)">0.0</td></tr><tr><td></td><td class='num'>4</td><td class="num" style="background:rgba(74,111,165,0.14633461218946048)">97.6</td><td class="num" style="background:rgba(74,111,165,0.0008001760224397835)">0.5</td><td class="num" style="background:rgba(74,111,165,0.002865211788099743)">1.9</td></tr><tr><td></td><td class='num'>8</td><td class="num" style="background:rgba(74,111,165,0.14256859771331307)">95.0</td><td class="num" style="background:rgba(74,111,165,0.0022641187152199625)">1.5</td><td class="num" style="background:rgba(74,111,165,0.005167283571466983)">3.4</td></tr><tr><td><strong>Real economic activity</strong></td><td class='num'>1</td><td class="num" style="background:rgba(74,111,165,4.9208060842339576e-05)">0.0</td><td class="num" style="background:rgba(74,111,165,0.14995079193915767)">100.0</td><td class="num" style="background:rgba(74,111,165,0.0)">0.0</td></tr><tr><td></td><td class='num'>4</td><td class="num" style="background:rgba(74,111,165,0.001658210049383841)">1.1</td><td class="num" style="background:rgba(74,111,165,0.14503586232245233)">96.7</td><td class="num" style="background:rgba(74,111,165,0.0033059276281638262)">2.2</td></tr><tr><td></td><td class='num'>8</td><td class="num" style="background:rgba(74,111,165,0.0012885478324441246)">0.9</td><td class="num" style="background:rgba(74,111,165,0.14015190825157586)">93.4</td><td class="num" style="background:rgba(74,111,165,0.008559543915979977)">5.7</td></tr><tr><td><strong>Real price of oil</strong></td><td class='num'>1</td><td class="num" style="background:rgba(74,111,165,0.0008160131254358211)">0.5</td><td class="num" style="background:rgba(74,111,165,0.0009339743429620841)">0.6</td><td class="num" style="background:rgba(74,111,165,0.14825001253160208)">98.8</td></tr><tr><td></td><td class='num'>4</td><td class="num" style="background:rgba(74,111,165,0.001253381724771199)">0.8</td><td class="num" style="background:rgba(74,111,165,0.002179788459902605)">1.5</td><td class="num" style="background:rgba(74,111,165,0.1465668298153262)">97.7</td></tr><tr><td></td><td class='num'>8</td><td class="num" style="background:rgba(74,111,165,0.0017750298167221133)">1.2</td><td class="num" style="background:rgba(74,111,165,0.004451413382519226)">3.0</td><td class="num" style="background:rgba(74,111,165,0.14377355680075868)">95.8</td></tr></table>
+<h2>Oil Specific Shock Summary</h2>
+<table><tr><th>Variable</th><th>Peak</th><th>Horizon</th><th>Sig. 68%</th><th>Sig. 90%</th><th>Cum(4)</th><th>Cum(8)</th></tr><tr><td>Oil production growth</td><td class="num">-2.2151</td><td class="num">1</td><td class="num"><span class="na">N/A (no inference)</span></td><td class="num"><span class="na">N/A (no inference)</span></td><td class="num">0.3339</td><td class="num">1.3169</td></tr><tr><td>Real economic activity</td><td class="num">2.3270</td><td class="num">9</td><td class="num"><span class="na">N/A (no inference)</span></td><td class="num"><span class="na">N/A (no inference)</span></td><td class="num">3.7503</td><td class="num">10.6529</td></tr><tr><td>Real price of oil</td><td class="num">8.5467</td><td class="num">2</td><td class="num"><span class="na">N/A (no inference)</span></td><td class="num"><span class="na">N/A (no inference)</span></td><td class="num">38.8889</td><td class="num">66.4441</td></tr></table>
+<h2>Narrative</h2>
+<div class="narrative"><p>Specification — Model: VAR(24) + recursive (Cholesky) identification; Variables: Oil production growth, Real economic activity, Real price of oil; Identification: Recursive — Kilian (2009) ordering [oil production, real activity, real oil price]; Sample: 1973-02 to 2007-12 (419 obs); Lag order: 24; Max |eigenvalue|: 0.9886.</p><p>Response to a oil_supply shock. dprod goes up on impact (+18.7), peaks at +18.7 by horizon 0, and is +2.31 by horizon 15 (≈ back to zero). rea goes up on impact (+0.0735), peaks at +0.932 by horizon 3, and is +0.912 by horizon 15 (still away from zero). rpo goes down on impact (-0.441), troughs at -1.08 by horizon 4, and is +0.366 by horizon 15 (still away from zero).</p><p>Response to a agg_demand shock. dprod goes flat on impact (+0), peaks at +1.99 by horizon 7, and is -1.72 by horizon 15 (still away from zero). rea goes up on impact (+4.06), peaks at +5.49 by horizon 13, and is +4.66 by horizon 15 (still away from zero). rpo goes up on impact (+0.471), peaks at +4.34 by horizon 13, and is +3.89 by horizon 15 (still away from zero).</p><p>Response to a oil_specific shock. dprod goes flat on impact (+0), troughs at -2.22 by horizon 1, and is -1.08 by horizon 15 (still away from zero). rea goes flat on impact (+0), peaks at +2.33 by horizon 9, and is +1.22 by horizon 15 (still away from zero). rpo goes up on impact (+5.94), peaks at +8.55 by horizon 2, and is +4.7 by horizon 15 (still away from zero).</p><p>Largest identified-shock share of forecast-error variance at the longest horizon: dprod (oil_supply, 95%); rea (agg_demand, 93%); rpo (oil_specific, 96%).</p><p>Stability: the largest companion eigenvalue modulus is 0.989 — inside the unit circle, so responses are mean-reverting.</p><p>Points to interpret and caveat: (1) Some responses have not returned toward zero by the final horizon (rea (to oil_supply), rpo (to oil_supply), dprod (to agg_demand), rea (to agg_demand)…) — check the horizon is long enough and the system stable. (2) Point estimates only; uncertainty intervals were not computed, so treat magnitudes as indicative.</p><p>[DRAFT NARRATIVE — refine the economic interpretation, connect the findings to the research question, and confirm/expand the flagged items before publishing.]</p></div>
+<h2>Research Log</h2>
+<details><summary>Full research log (JSON)</summary><pre>{
+  "replication_id": "kilian_2009_oil_svar",
+  "timestamp_utc": "2026-11-24T02:46:34.065114+00:00",
+  "data": {
+    "source": "https://raw.githubusercontent.com/richryan/jcre-oil/main/kilianAER2009replication/data.txt",
+    "n_obs": 419,
+    "sample_start": "1973-02-01",
+    "sample_end": "2007-12-01",
+    "variables": [
+      "dprod",
+      "rea",
+      "rpo"
+    ]
+  },
+  "model": {
+    "class": "var",
+    "lags": 24,
+    "max_eigenvalue_modulus": 0.9885919975246638,
+    "fit_info": {
+      "trend": "c",
+      "aic": 12.722382343164435,
+      "bic": 14.928397488767843,
+      "hqic": 13.596424343073082,
+      "llf": -3975.112674622513,
+      "nobs": 395,
+      "k_ar": 24,
+      "has_exog": false
+    }
+  },
+  "identification": {
+    "method": "cholesky",
+    "ordering": [
+      "dprod",
+      "rea",
+      "rpo"
+    ],
+    "shock_names": [
+      "oil_supply",
+      "agg_demand",
+      "oil_specific"
+    ]
+  },
+  "seed": 42,
+  "paper_target_comparison": {
+    "n_targets": 5,
+    "n_pass": 5,
+    "n_fail": 0,
+    "all_pass": true,
+    "rows": [
+      {
+        "description": "Oil-specific (precautionary) demand shock -&gt; real oil price, IMPACT response",
+        "location": "Kilian (2009) Fig. 3, p. 1061, bottom-right cell (values from the author's replication files)",
+        "paper_value": 5.94,
+        "paper_units": "percent",
+        "our_value": 5.940117580780597,
+        "our_key": "oil_specific_rpo_impact",
+        "diff": 0.00011758078059642685,
+        "tolerance": 0.5,
+        "tolerance_kind": "absolute",
+        "ok": true,
+        "reason": null
+      },
+      {
+        "description": "Oil-specific demand shock -&gt; real oil price, PEAK response (~2 months)",
+        "location": "Kilian (2009) Fig. 3, p. 1061, bottom-right cell (values from the author's replication files)",
+        "paper_value": 8.55,
+        "paper_units": "percent",
+        "our_value": 8.546688442000393,
+        "our_key": "oil_specific_rpo_peak",
+        "diff": -0.003311557999607473,
+        "tolerance": 0.6,
+        "tolerance_kind": "absolute",
+        "ok": true,
+        "reason": null
+      },
+      {
+        "description": "Number of endogenous variables (3-variable global oil-market VAR)",
+        "location": "Kilian (2009) Sec. II.A, eq. (1), p. 1058",
+        "paper_value": 3.0,
+        "paper_units": "count",
+        "our_value": 3.0,
+        "our_key": "n_vars",
+        "diff": 0.0,
+        "tolerance": 0.0,
+        "tolerance_kind": "absolute",
+        "ok": true,
+        "reason": null
+      },
+      {
+        "description": "VAR lag order (24 monthly lags)",
+        "location": "Kilian (2009) Sec. II.A, eq. (1), p. 1058",
+        "paper_value": 24.0,
+        "paper_units": "count",
+        "our_value": 24.0,
+        "our_key": "n_lags",
+        "diff": 0.0,
+        "tolerance": 0.0,
+        "tolerance_kind": "absolute",
+        "ok": true,
+        "reason": null
+      },
+      {
+        "description": "Max |eigenvalue| regression check (near unit root expected for a level oil-price system; the band admits mildly explosive roots, so this is not a stability test)",
+        "location": "Own eigenvalue diagnostic, not a paper value (the paper reports no eigenvalues)",
+        "paper_value": 0.99,
+        "paper_units": "modulus",
+        "our_value": 0.9885919975246638,
+        "our_key": "max_eig_modulus",
+        "diff": -0.0014080024753362341,
+        "tolerance": 0.05,
+        "tolerance_kind": "absolute",
+        "ok": true,
+        "reason": null
+      }
+    ]
+  }
+}</pre></details>
+
+<script>
+function switchTab(groupId, tabIdx) {
+    const buttons = document.querySelectorAll(`[data-group="${groupId}"] .tab-btn`);
+    const panels = document.querySelectorAll(`[data-group="${groupId}"] .tab-panel`);
+    buttons.forEach((b, i) => b.classList.toggle('active', i === tabIdx));
+    panels.forEach((p, i) => p.classList.toggle('active', i === tabIdx));
+    // Trigger Plotly resize for charts that were hidden
+    const activePanel = panels[tabIdx];
+    if (activePanel) {
+        const plots = activePanel.querySelectorAll('.js-plotly-plot');
+        plots.forEach(p => Plotly.Plots.resize(p));
+    }
+}
+</script>
+</body>
+</html>
